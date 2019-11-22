@@ -494,7 +494,7 @@ on property:vendor.media.target_variant=*
 
 on property:vold.decrypt=trigger_restart_framework
     start wcnss-service
-
+    
 service vendor.qrtr-ns /vendor/bin/qrtr-ns -f
     class core
     user vendor_qrtr
@@ -641,6 +641,12 @@ service wifi-crda /vendor/bin/init.crda.sh
    oneshot
 
 on property:sys.boot_completed=1
+
+    # FPS Info permissions
+    chown system graphics /sys/class/drm/sde-crtc-0/measured_fps
+    chmod 0666 /sys/class/drm/sde-crtc-0/measured_fps
+    start vendor.qcom-post-boot
+
     start qcom-post-boot
 
 on property:ro.vendor.ril.mbn_copy_completed=1
