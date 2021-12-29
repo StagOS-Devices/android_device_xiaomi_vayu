@@ -121,6 +121,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
    libstdc++.vendor
 
+# Overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay
+
 # Charger
 PRODUCT_PACKAGES += \
     libsuspend
