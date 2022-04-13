@@ -11,8 +11,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit device configurations
 $(call inherit-product, device/xiaomi/vayu/device.mk)
 
-# Inherit common ArrowOS configurations
+# Inherit common StagOS configurations
 $(call inherit-product, vendor/stag/main.mk)
+BUILD_TYPE := OFFICIAL
 
 PRODUCT_NAME := stag_vayu
 PRODUCT_DEVICE := vayu
